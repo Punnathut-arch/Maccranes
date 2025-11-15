@@ -1,0 +1,297 @@
+.banner-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+.banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.wrap {
+  display: flex; text-align: center; height: 500px; margin-bottom: 50px;
+}
+.left { width: 48%; max-width: 48%; overflow: hidden; margin-top: 10px;}
+.right { 
+  margin-top: 10px;
+  width: 50%;
+  overflow: hidden;
+ }
+.crane-img {
+  width: 90%;
+  margin: 40px; padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.logocrane-img {
+  width: 25%;
+  margin-top: 12px;
+}
+.massage p {
+  padding: 5px;
+}
+.company h1 {
+  display: inline-block;
+  font-family: "Kanit", sans-serif; font-style: normal; font-size: 45px; color: black; font-weight: 800;
+  color: #ffc107;
+  padding: 10px;
+  margin-top: -40px;
+}
+.company > span {
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 45px; color: black; font-weight: 800;
+  margin-top: -50px;
+}
+.company p {
+  margin-top: -40px ;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 20.75px; color: black; font-weight: 500;
+}
+.wrap-two {
+  display: flex;
+  background:linear-gradient(
+    rgba(255, 200, 0, 0.55)),
+  url("../images/logo.jpg") center/cover no-repeat;
+  max-height: 500px;
+  height: auto;
+}
+.left-two { text-align: center; width: 48%; max-width: 48%; margin-top: 10px; margin-bottom: 600px;}
+.left-two p { 
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 35px; color: black; font-weight: 800;
+  margin-top: 20%;
+  margin-bottom: -20%;
+}
+.right-two { 
+  display: flex; 
+  margin-top: 30px;
+  width: 50%;
+  gap: 10px;
+ }
+.crane1-img { height: 90%; width: 50%;}
+.crane2-img { height: 90%; width: 50%;}
+.wrap-three {
+  display: flex;
+  background:linear-gradient(
+    rgba(255, 200, 0, 0.55)),
+  url("../images/crane.jpg") center/cover no-repeat;
+  max-height: 750px;
+  height: auto;
+}
+.left-three { 
+  display: grid; 
+  grid-template-columns: repeat(2,1fr);
+  margin-top: 20px; padding: -10px;
+  width: 50%;
+  gap: -10px;
+ }
+.crane3-img { margin-left: 25px; height:95%; width: 95%;}
+.crane4-img { margin-left: 25px; height:60%; width: 95%;} 
+ .right-three { text-align: center; width: 48%; max-width: 48%; margin-top: 10px; margin-bottom: 600px;}
+.right-three p { 
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 30px; color: black; font-weight: 800;
+  margin-left: 25px; margin-top: 35%;
+}
+.wrap-four {
+  display: flex;
+  background:linear-gradient(
+    rgba(255, 200, 0, 0.55)),
+  url("../images/crane4.jpg") center/cover no-repeat;
+  max-height: 500px;
+  max-width: auto;
+  height: auto;
+}
+.left-four { text-align: center; width: 48%; max-width: 48%; margin-top: 10px; margin-bottom: 600px;}
+.left-four p { 
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 30px; color: black; font-weight: 800;
+  margin-top: 25%;
+  margin-bottom: -20%;
+  margin-left: 30px; margin-right: 30px;
+}
+.right-four { 
+  display: flex; 
+  margin-top: 30px;
+  margin-right: 20%;
+  width: 50%;
+  gap: 10px;
+  align-items: center;
+ }
+.crane5-img { margin-left: 25px; height:85%; max-width: 65%;}
+.crane6-img { margin-left: 35px; height:85%; max-width: 65%;} 
+.wrap-five {
+  display: flex;
+  background:linear-gradient(
+    rgba(255, 200, 0, 0.55)),
+  url("../images/crane11.jpg") center/cover no-repeat;
+  max-height: 800px;
+  height: auto;
+  overflow: hidden;
+}
+.left-five { 
+  display: grid; 
+  grid-template-columns: repeat(2,1fr);
+  margin-top: 10px; padding: 10px;
+  width: 50%;
+  gap: 5px;
+ }
+.crane7-img { margin-left: 20px; height:70%; width: 90%;}
+.crane8-img { margin-left: 20px; margin-top:-150px; height:95%; width: 90%;} 
+.right-five { text-align: center; width: 48%; max-width: 48%; margin-top: 10px; margin-bottom: 600px;}
+.right-five p { 
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 25px; color: black; font-weight: 800;
+  margin-left: 60px; margin-right: 60px; margin-top: 35%;
+}
+.endweb {text-align: center;}
+.logocrane2-img { height: 120px; margin-top: 20px;}
+.contact-ttend { 
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 28px; color:#ffc107 ; font-weight: 500;
+  margin-top:-3px ; 
+  margin-bottom: 5px; 
+}
+.contact-listend { margin-top: 5px;}
+.contactend a {
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 25px; color: white ; font-weight: 500;
+  text-decoration: none;
+  margin-left: -20px;
+}
+.contactend span{
+  font-family: "Kanit", sans-serif;font-style: normal; font-size: 25px; color: white ; font-weight: 500;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.contactend li { list-style: none;}
+.contactend a:hover {text-decoration: underline;}
+.logofb {
+  display: inline-flex;
+  margin-left: -10px;
+  margin-bottom: -3px;
+  border-radius: 50%;
+  background-color: #1877F2;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.gt {margin-right: 20px;}
+.oe {
+    font-family: "Kanit", sans-serif;font-style: normal; font-size: 25px; color: white ; font-weight: 500;
+  text-decoration: none;
+  margin-right: 20px;
+}
+@media (max-width:960px){
+  .wrap {display: grid; text-align: center; height: auto; margin: auto;}
+.left { width: 100%; max-width: 100%; overflow: hidden; margin-top: 10px;}
+.right { 
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+ }
+  .crane-img {
+  width: 90%;
+  margin-left: 20px; margin-right: 20px ; padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.logocrane-img {
+  width: 35%;
+  margin-top: -13px;
+}
+.company h1 {font-size: 30px; }
+.company > span { font-size: 30px;}
+.company p { font-size: 20px; margin-top: -5px;}
+.wrap-two { display:grid; text-align: center;  height: auto; margin: auto;position: relative;}
+.left-two { width: 100%; max-width: 100%; }
+.left-two p { 
+ font-size: 25px;
+ margin-top: 8%;
+ margin-left: 10% ;
+ margin-right: 10%;
+}
+.right-two {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top:40%;
+  margin-left: 10%;
+  margin-right: auto;
+  width: 100%;
+}
+.crane1-img { height: 100%; width: 80%;}
+.crane2-img { display: none;}
+.wrap-three { display:grid; text-align: center;  height: 400px; max-height: 40%; margin: auto; position: relative;}
+.left-three { 
+  margin-top: 5%;
+  margin-left: -15px;
+  margin-right: 5px;
+  width: 100%;
+  max-width: 100%;
+  gap: 10px; 
+}
+.crane3-img { display: none;}
+.crane4-img { height:60%; width: 90%;}
+.right-three {width: 100%; text-align: center; }
+.right-three p {
+position: absolute;
+ font-size: 22px;
+ margin-top: -23%;
+ margin-left: 20%;
+ margin-right: 20%;
+}
+.wrap-four { display:grid; text-align: center;  height: 600px; max-height: none; margin: auto; position: relative;}
+.left-four { width: 100%; max-width: 100%; }
+.left-four p { 
+ font-size: 20px;
+ margin-top: 8%;
+ margin-left: 10% ;
+ margin-right: 10%;
+}
+.right-four {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: 45%;
+  margin-left: 20%;
+  margin-right: 30%;
+  width: 100%;
+}
+.crane5-img { height:70%; width: 50%;}
+.crane6-img { height:70%; width: 50%;}
+.wrap-five { display:grid; text-align: center;  height: 600px; max-height: 40%; margin: auto; position: relative;}
+.left-five { 
+  margin-top: 5%;
+  margin-left: -20px;
+  margin-right: 5px;
+  width: 100%;
+  max-width: 100%;
+  gap: 10px; 
+}
+.crane7-img {height:60%; width: 90%; }
+.crane8-img { display: none;}
+.right-five {width: 100%; text-align: center; }
+.right-five p {
+position: absolute;
+ font-size: 20px;
+ margin-top: -23%;
+ margin-left: 20%;
+ margin-right: 20%;
+}
+.contact-ttend { font-size: 25px; }
+.contactend a {font-size: 18px; margin-right: 8px;}
+.contactend span {font-size: 18px; margin-right: 20px;}
+.oe {margin-left: -5px;}
+}
+
+@media (min-width:960px) and (max-width:1240px) {
+.company h1 {font-size: 30px; }
+.company > span { font-size: 30px;}
+.company p { font-size: 20px; }
+.wrap-two { text-align: center; }
+.left-two p { 
+ font-size: 25px; margin-top: 200px;} 
+.right-three p {font-size: 25px;}
+.crane3-img { height:40%; width: 90%; margin-top: 30px; margin-bottom: 100px;}
+.crane4-img { height:40%; width: 90%;}
+.left-four p {font-size: 22px; margin-top: 180px; }
+.crane5-img { height:60%; width: 90%; margin-top: 50px; }
+.crane6-img { height:60%; width: 60%; margin-top: 50px;}
+.crane7-img { height:50%; width: 100%; margin-bottom: 70px;}
+.crane8-img { height:50%; width:100%} 
+}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ความรู้| TumWeb{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/knowledge.css' %}">
+{% endblock %}
+{% block content %}
+<body>
+   <header class="knowledge-h">
+    <h1>ความรู้ ความเข้าใจ เกี่ยวกับเครน</h1>
+   </header>  
+   <div class="knowledge-images">
+    <img src="{% static 'images/crane.jpg' %}" alt="รูปเครน" class="crane-img">
+   </div>
+   <section class="article-crane">
+    <h2>เครนพับคืออะไร</h2>
+    <div class="paragraph-1">
+     <p>เครนพับ (Knuckle Boom Crane) คือ เครนที่ทำงานจากการเปลี่ยนแรงดันน้ำมันไฮโดรลิคเป็นการเคลื่อนที่ (พลังงานกล) ทุกจุด โดยตรง 100%</p>
+    </div>
+    <h3>โครงสร้างเครนพับ</h3>
+    <div class="paragraph-2">
+     <p>โครงสร้างเครนพับ จะมีจุดเคลื่อนที่หลัก อยู่ 6จุด ดังนี้ </p>
+     <p>-ยกขา 2จุด</p>
+     <p>-หมุน(เอว) 1จุด</p>
+     <p>-พับ(ยกและเงย) 2จุด</p>
+     <p>-ยืดบูม 1จุด (แบบต่อพ่วง)</p>  
+    </div>
+    <h4>หลักการทำงาน</h4>
+    <div class="paragraph-3">
+     <p>-ปั็ม สร้างแรงดันน้ำมันไฮโดรลิค >>>>>ส่งน้ำมันไฮโดรลิคไปให้วาร์ว</p> 
+     <p>-วาร์ว ทำหน้าที่เปิด-ปิดน้ำมันไฮโดรลิค(ที่มีแรงดัน) >>>>>ส่งน้ำมันไฮโดรลิคไปหากระบอกไฮโดรลิค</p> 
+     <p>-กระบอกไฮโดรลิค ทำหน้าที่เปลี่ยนแรงดันน้ำมันไฮโดรลิคเป็นการเคลื่อนที่แบบมีกำลัง(พลังงานกล)</p>
+     </div>
+    </div class="paragraph-4">
+     <h5>ขนาดเครนพับ</h5>
+     <p >ขนาดเครนพับจะขึ้นอยู่กับ ความสามารถในการยก(ตัน)ที่ระยะยก(ม) แบ่งกลุ่มตามความสามารถยกสุงสุด คือ 1,2,3,4,5,6,6.5,7,8,9,10,12,14,16,18,20 และ22ตัน</p>
+     </div>
+    <div class="knowledge-images2">
+     <img src="{% static 'images/crane8.jpg' %}" alt="รูปเครน" class="crane2-img">
+     <img src="{% static 'images/crane16.jpg' %}" alt="รูปเครน" class="crane2-img">
+     <img src="{% static 'images/crane18.jpg' %}" alt="รูปเครน" class="crane2-img">
+     <img src="{% static 'images/crane15.jpg' %}" alt="รูปเครน" class="crane3-img">
+
+   </section>
+
+   <div class="endweb" style=" overflow: hidden; width: 100%; height: 420px; background:black;">
+        <div class="contactend">
+        <img src="{% static 'images/logomaccrane1.png' %}" alt="โลโก้เครน" class="logocrane2-img">
+        <h3 class="contact-ttend">บริษัท แม็ค โปรเมททอล จำกัด</h3>
+        <ul class="contact-listend">
+            <li>
+              <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x311d81059e8b0267:0xc7e8169525d50858?entry=s&sa=X&ved=2ahUKEwjBmL3X98mQAxUlavUHHRpOATgQ4kB6BAgXEAA" target="_blank" rel="noopener">10/28 ม.13 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120</a>
+            </li>
+            <li>
+            <div class="facebook-end">
+              <a class="fb-end" href="https://www.facebook.com/Maccranes" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
+               <!-- Facebook SVG -->
+                <svg class="logofb" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.2-3.4.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.62-1.3 1.26V12h2.2l-.35 2.9h-1.85v7A10 10 0 0 0 22 12z"/>
+                </svg> <span>Facebook</span></a>
+              </li>
+
+            <li class="gt">
+             <span>Email:</span><a href="mailto:mac.cranetrucks@gmail.com"> mac.cranetrucks@gmail.com</a>
+            </li>
+            <li class="gt">
+             <span>Tel/Line/WhatsApp:</span> <a href="tel:0827963619">082-796-3619</a>
+            </li>
+            <li class="oe">เปิด 8:00น.–17:00น. จันทร์-ศุกร์</li>
+        </div>
+    </div>
+</body>
+  
+{% endblock %} 

@@ -1,0 +1,322 @@
+/* ===== 1) ฟอนต์พื้นฐาน (ตามระบบปฏิบัติการ) ===== */
+html, body, button, input, textarea, select {
+  font-family:
+    system-ui,
+    -apple-system,           /* macOS / iOS */
+    "Segoe UI",              /* Windows */
+    Roboto,                  /* Android / ChromeOS */
+    "Noto Sans Thai",        /* ฟอนต์ไทย (ถ้ามี) */
+    Tahoma, Arial,
+    "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+body { margin: 0; background:#f9f9f9; }
+#btt {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  background-color: #ffd200;
+  position: fixed;
+  right: 1.5rem;
+  bottom: 2rem;
+  display: none;
+  z-index: 999;
+}
+/* ===== 2) ท็อปบาร์ ===== */
+.Topbar{
+  position: sticky; top:0; /* ติดบนสุดเวลาเลื่อน */
+  width:auto; height:100px;
+  background:#ffd200;
+  display:flex; align-items:center; justify-content:flex-start;
+  gap: clamp(10px, 2vw, 24px);
+  padding: 0 clamp(12px, 4vw, 32px);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  z-index: 1000;
+  position: relative;
+}
+
+/* โลโก้กลม */
+.logo{
+  position:absolute; top:16px; left:16px;
+  width:64px; height:64px; border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.22);
+}
+
+/* ชื่อบริษัท */
+.company-name{
+  display:flex; align-items:center;
+  margin-left: 66px;             /* เว้นให้พ้นโลโก้ */
+  z-index:1;
+}
+.company-name span{
+  font-size: 25px;
+  color: rgba(0,0,0,.85);
+  letter-spacing:.3px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+/* ===== 3) เมนูเดสก์ท็อป ===== */
+.nav-menu ul{
+  display:flex; gap:16px; margin:0; padding:0; list-style:none;
+}
+.nav-menu li{ display:flex; align-items:center; }
+.nav-menu a span {
+  font-family: "Kanit", sans-serif;font-weight: 500;font-style: normal; font-size: 18px;
+  position:relative;       /* รองรับ ::after เส้นขีด */
+  display:inline-block;
+  padding:6px 12px;
+  text-decoration:none;
+  color: rgba(0,0,0,.6);
+  font-weight:600;
+  transition: color .25s ease;
+}
+.nav-menu a:hover span,
+.nav-menu a.active span{ color: rgba(0,0,0,.92); }
+
+/* เส้นขีดใต้แบบลื่น */
+.nav-menu a span::after{
+  content:"";
+  position:absolute; left:50%; bottom:-6px;
+  width:0; height:4px; background:#222; /* โทนเข้ากับเหลือง */
+  border-radius:2px;
+  transform: translateX(-50%);
+  transition: width .25s ease;
+}
+.nav-menu a:hover span::after,
+.nav-menu a.active span::after{ width:50%; }
+
+/* ===== 4) ปุ่มสามขีด (เริ่มต้นซ่อน – โผล่เฉพาะมือถือ) ===== */
+.hamburger{        /* ดันไปขวาสุด */
+  display:none; background:transparent; border:0; padding:8px;
+  cursor:pointer; border-radius:6px; 
+}
+.hamburger:focus-visible{ outline: 2px solid rgba(0,0,0,.4); }
+.hamburger .bar{
+  display:block; width:24px; height:3px; margin:5px 0;
+  background: black; border-radius: 50px; 
+}
+.nav-menu .submenu {
+  display: none; position: absolute; background: #fff; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 10px  rgba(0,0,0,0.05);  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  z-index: 1000;
+}
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: #fff ;
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  z-index: 1000;
+}
+.nav-menu li:hover > .submenu {
+  display: block;
+}
+.nav-menu li {
+  position: relative;
+}
+.nav-menu a {
+  display: inline-block; position: relative; text-decoration: none; padding: 8px 14px; font-weight: 600; color: rgba(0,0,0,0.85);
+}
+.nav-menu .has-submenu > a {
+  position: relative; display: inline-flex; align-items: center; 
+}
+.nav-menu .has-submenu > a::after {
+  content: "▾"; display: inline-block; font-size: 0.75em; margin-left: -8px; position: relative; top: 0;
+}
+.submenu-toggle {
+  display: none;
+}
+.has-submenucrane > .submenu { top: 0; left: 220px;}
+.submenu-caret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  margin-left: 100px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.submenu-caret::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-right: 2px solid rgba(0,0,0,.7);
+  border-bottom: 2px solid rgba(0,0,0,.7);
+  transform: rotate(45deg);
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.has-submenucrane:hover > .submenu-caret::before { transform: rotate(-45deg);}
+
+/* 5) จุดเบรก 960px: ipad */
+@media (max-width: 1280px){
+  .Topbar{ height:65px; padding: 4px 16px; }
+  .logo{ width:44px; height:44px; top:10px; left:12px; }
+  .company-name span{ font-size:16px; margin-left:-10px; }
+}
+/* 6) มือถือ/แท็บเล็ต 960px: ,มือถือ ใช้เมนูแบบสไลด์ลง + โชว์ปุ่มสามขีด */
+@media (max-width: 960px){
+  .Topbar{ width: auto; max-width: 100%; height:56px; padding: 0; }
+  .logo{ width:38px; height:38px; top:6px; left:6px; }
+  .company-name span{ font-size:18px; margin-left:-11px; }
+
+  .hamburger{ display:block ; margin-left: auto; }     /* โชว์ปุ่มขวาสุด */
+  /* ซ่อนเมนูปกติ แล้วทำเป็นแผงสไลด์ */
+  .nav-menu{
+    position:fixed; top:56px; right:0; left:0;
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    transform: translateY(-8px);
+    opacity:0; pointer-events:none;
+    transition: opacity .2s ease, transform .2s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    width: 100%; box-sizing: border-box; padding: 0 8px;
+  }
+  .nav-menu ul{
+    flex-direction:column; gap:0;
+    padding:8px 12px;
+  }
+  .nav-menu li + li{ border-top:1px dashed rgba(0,0,0,.08); }
+  .nav-menu a{ padding:12px 6px; font-size:15px; }
+  /* เปิดเมนูเมื่อมีคลาส .open (จาก JS) */
+  .nav-menu.open{
+    transform: translateY(0);
+    opacity:1; pointer-events:auto;
+  }
+  .nav-menu a span::after {
+    display: none !important;
+  }
+  .nav-menu a {
+    display: block;
+    width: calc(100% - 10px); margin: 8px 0 6px 0; 
+    box-sizing: border-box;
+    padding: 16px 16px;
+    border-radius: 12px;
+    transition: color 0.2s ease, background-color 0.2 ease ;
+  }
+ .nav-menu a:hover,
+ .nav-menu a.active {
+  background-color: rgba(0,0,0,0.05);
+  border: 2px solid rgba(0,0,0,0.15);
+ }
+/* =============================== */
+/* ระบบเมนูใหม่ ใช้ปุ่มลูกศรเปิดปิด */
+/* =============================== */
+/* โครงพื้นฐาน */
+.nav-menu li { position: relative; }
+.submenu { display: none; }
+/* ปุ่มลูกศร */
+.submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  margin-left: -35px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.submenu-toggle::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-right: 2px solid rgba(0,0,0,.7);
+  border-bottom: 2px solid rgba(0,0,0,.7);
+  transform: rotate(45deg);
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.has-submenu.open > .submenu { display: block; }
+.has-submenu.open > .submenu-toggle::before { transform: rotate(-135deg); 
+}
+  .has-submenu > .submenu {
+    position: static;
+    top: 100%;
+    max-height: none;
+    width: 400px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    padding: 16px;
+    z-index: 1000;
+  }
+  .submenu li a {
+    padding: 10px 10px; /* ตัวอย่าง: ลดค่าจาก 8px เป็น 4px */
+    line-height: 1 ;  /* ปรับ line-height เพื่อลดช่องว่างระหว่างบรรทัด */
+    display: block; /* สำคัญ: ให้ลิงก์เป็น block-level element เพื่อให้ปรับ padding ได้ */ 
+}
+  .has-submenu:hover > .submenu { display: block; }
+
+  .nav-menu a::after,
+  .nav-menu a:hover::after,
+  .nav-menu a.active::after { display: none !important;}
+  .has-submenu.open > .submenu { display: block;}
+}
+/* มือถือ: ใช้ .open อย่างเดียว */
+@media (max-width: 960px) {
+  .nav-menu li:hover > .submenu { display: none; }
+  .nav-menu li.open > .submenu { position: absolute; display: block; top: 100%; }
+  /* ลบเส้นประใต้เมนู */
+.submenu li,
+.has-submenu > .submenu {
+  border: none !important;
+}
+.submenu a {
+  border-radius: 0;
+}
+.has-submenucrane > .submenu-caret {
+  position: absolute;
+  margin-left: 90% ;
+}
+.submenu-caret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  margin-left: -5px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.submenu-caret::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-right: 2px solid rgba(0,0,0,.7);
+  border-bottom: 2px solid rgba(0,0,0,.7);
+  transform: rotate(45deg);
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.has-submenucrane:hover > .submenu-caret::before { transform: rotate(45deg);}
+.has-submenucrane.open > .submenu-caret::before { transform: rotate(-135deg);}
+.menu-link {
+  display: block;
+}
+.has-submenucrane > .submenu {
+  position: sticky;
+  width: 200px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.1);
+  left: 50% ;
+  margin: 0;
+  overflow: visible !important;
+}
+.has-submenucrane > .submenu > li > a {
+ left: 5px;
+}
+
+}

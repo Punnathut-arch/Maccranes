@@ -1,0 +1,184 @@
+{% load static %}
+<!Doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}TumWeb{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block extra_css %}{% endblock %}
+    <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    :target {
+      scroll-margin-top: 120px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="scrollToTop();" id="btt" title="back to top">▲</button>
+  <header class="Topbar">
+    <img src="{% static 'images/logo.jpg' %}" alt="โลโก้เครน" class="logo">
+    <div class="company-name"> 
+      <span>เครนพับรถบรรทุก</span>
+    </div>
+    <nav class="nav-menu" id="main-menu">
+      <ul>
+        <a href="{% url 'home' %}"><Span>หน้าแรก</Span></a>
+        <li class="has-submenu">
+          <a href="{% url 'product' %}" aria-expanded="false"><span>สินค้า</span></a>
+          <button class="submenu-toggle" aria-label="toggle submenu" aria-expanded="false"></button>
+          <ul class="submenu">
+            <li class="has-submenucrane">
+             <a class="menu-link" href="{% url 'product' %}#cat-3">เครนพับ</a> <!-- ลิงก์เข้าเพจเครนพับได้ตามปกติ -->
+             <!-- ปุ่มลูกศรสำหรับกางเมนูย่อยเท่านั้น -->
+             <button class="submenu-caret" aria-label="เปิดเมนูย่อย: เครนพับ" aria-expanded="false" aria-controls="sub-crane"></button>
+              <ul id="sub-crane" class="submenu">
+               <li><a href="{% url 'product' %}#sub-3">ยี่ห้อ Fassi</a></li>
+               <li><a href="{% url 'product' %}#sub-4">ยี่ห้อ Palfinger</a></li>
+               <li><a href="{% url 'product' %}#sub-5">ยี่ห้อ Hiab</a></li>
+               <li><a href="{% url 'product' %}#sub-6">ยี่ห้อ PM</a></li>
+              </ul>
+           </li>
+           <li><a id="spec" href="{% url 'product' %}?open=spec">เลือกการใช้งานเครนพับ</a></li>
+            <li><a href="{% url 'product' %}#cat-4">อุปกรณ์เครน</a></li>
+          </ul>
+        </li>
+        <a href="{% url 'knowledge' %}"><span>ความรู้</span></a>
+        <a href="{% url 'contact' %}"><span>ติดต่อเรา</span></a>
+      </ul>
+    </nav>
+    
+    <button class="hamburger" aria-label="เปิดเมนู"aria-controls="main-menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+  <main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('spec');
+  if (!btn) return;
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    if (location.pathname.includes('/product')) {
+      const p = document.getElementById('specForm');
+      if (p) {
+        p.style.display = 'block';
+        p.classList.add('open');
+        const specbtn = document.querySelector('.b-spec') || p;
+        setTimeout(() => p.scrollIntoView({behavior:'smooth',block:'center'}),100);
+      }
+    } else {
+      location.href = "{% url 'product' %}?open=spec";
+    }
+  });
+  if (new URLSearchParams(location.search).get('open') === 'spec') {
+    const p = document.getElementById('specForm');
+    if (p) {
+      p.style.display = 'block';
+      p.classList.add('open');
+      const specbtn = document.querySelector('.b-spec') || p;
+      setTimeout(() => p.scrollIntoView({behavior:'smooth',block:'center'}),100);
+    }
+  }
+});
+</script>
+<script>
+    // โชว์ปุ่มเมื่อเลื่อนลง
+    window.onscroll = function () {
+        let btn = document.getElementById("btt");
+        if (document.documentElement.scrollTop > 500) {
+            btn.style.display = "flex";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+
+    // ฟังก์ชันเลื่อนไปบนสุด
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+{% block content %}{% endblock %}
+  </main>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // ปุ่ม hamburger (เมนูสามขีด)
+  const menuBtn = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  // เปิด/ปิดเมนูหลัก
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+     document.querySelectorAll('.nav-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-menu')?.classList.remove('open');
+    });
+  });
+});
+}
+  // ลูกศรเปิด/ปิดเมนูย่อย
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
+  submenuToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      // เฉพาะมือถือเท่านั้น
+      if (window.matchMedia("(max-width: 960px)").matches) {
+        e.preventDefault();
+        const parentLi = toggle.closest(".has-submenu");
+
+        // ปิดเมนูอื่นก่อน
+        document.querySelectorAll(".has-submenu.open").forEach((item) => {
+          if (item !== parentLi) item.classList.remove("open");
+        });
+
+        // เปิด/ปิดเมนูนี้
+        parentLi.classList.toggle("open");
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ปุ่มลูกศร: toggle เฉพาะเมนูย่อย
+  document.querySelectorAll('.submenu-caret').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation(); // กันไปโดนลิงก์ข้างๆ
+      const li = btn.closest('.has-submenucrane');
+      const isOpen = li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+
+      // ปิดพี่น้อง (optional)
+      li.parentElement.querySelectorAll(':scope > li.has-submenu.open').forEach(sib => {
+        if (sib !== li){ 
+          sib.classList.remove('open');
+          const b = sib.querySelector(':scope > .submenu-caret');
+          if (b) b.setAttribute('aria-expanded','false');
+        }
+      });
+      // เลื่อนให้เห็นเมนูย่อยที่เปิด (เฉพาะ drawer ที่เลื่อนได้)
+      const panel = document.querySelector('.nav-menu');
+      const sub = li.querySelector(':scope > .submenu');
+      if (panel && sub){
+        const dy = sub.getBoundingClientRect().top - panel.getBoundingClientRect().top - 12;
+        panel.scrollBy({ top: dy, behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

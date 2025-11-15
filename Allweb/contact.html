@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ติดต่อเรา | TumWeb{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+<header class="contact-h">
+<h1>ติดต่อเรา</h1>
+</header>    
+<section class="contact-section">
+  <div class="contact-overlay">
+    <div class="contact-wrapper">
+      <!-- ฝั่งซ้าย: แผนที่ -->
+      <div class="contact-map">
+        <h2>แผนที่</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.37467608232!2d100.6311353!3d14.1140497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d81059e8b0267%3A0xc7e8169525d50858!2zTUFDIENSQU5FUyDguYDguITguKPguJnguJ7guLHguJrguKPguJbguJrguKPguKPguJfguLjguIE!5e0!3m2!1sth!2sth!4v1763047502437!5m2!1sth!2sth" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- ฝั่งขวา: ฟอร์ม -->
+      <div class="contact-form">
+        <h2>ส่งข้อความถึงเรา</h2>
+
+        <form action="#" method="post">
+           {% csrf_token %}
+          <div class="form-row">
+            <label for="name">ชื่อ-นามสกุล</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">อีเมล</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="subject">เรื่องที่ติดต่อ</label>
+            <select id="subject" name="subject">
+              <option value="">— กรุณาเลือก —</option>
+              <option>สอบถามสินค้า</option>
+              <option>ขอใบเสนอราคา</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">ข้อความเพิ่มเติม</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="contact-btn">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <div class="endweb" style=" overflow: hidden; width: 100%; height: 420px; background:black;">
+        <div class="contactend">
+        <img src="{% static 'images/logomaccrane1.png' %}" alt="โลโก้เครน" class="logocrane2-img">
+        <h3 class="contact-ttend">บริษัท แม็ค โปรเมททอล จำกัด</h3>
+        <ul class="contact-listend">
+            <li>
+              <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x311d81059e8b0267:0xc7e8169525d50858?entry=s&sa=X&ved=2ahUKEwjBmL3X98mQAxUlavUHHRpOATgQ4kB6BAgXEAA" target="_blank" rel="noopener">10/28 ม.13 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120</a>
+            </li>
+            <li>
+            <div class="facebook-end">
+              <a class="fb-end" href="https://www.facebook.com/Maccranes" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
+               <!-- Facebook SVG -->
+                <svg class="logofb" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.2-3.4.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.62-1.3 1.26V12h2.2l-.35 2.9h-1.85v7A10 10 0 0 0 22 12z"/>
+                </svg> <span>Facebook</span></a>
+              </li>
+
+            <li class="gt">
+             <span>Email:</span><a href="mailto:mac.cranetrucks@gmail.com"> mac.cranetrucks@gmail.com</a>
+            </li>
+            <li class="gt">
+             <span>Tel/Line/WhatsApp:</span> <a href="tel:0827963619">082-796-3619</a>
+            </li>
+            <li class="oe">เปิด 8:00น.–17:00น. จันทร์-ศุกร์</li>
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}  

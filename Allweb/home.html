@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}หน้าแรก | TumWeb{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="banner-img-wrap">
+    <img src="{% static 'images/banner.jpg' %}" alt="แบนเนอร์เครน" class="banner-img">
+    <div class="wrap">
+    <div class="left">
+      <img src="{% static 'images/crane.jpg' %}" alt="รูปเครน" class="crane-img">
+    </div>
+    <div class="right">
+      <img src="{% static 'images/logomaccrane1.png' %}" alt="โลโก้เครน" class="logocrane-img">
+    <div class="company">
+        <h1>MAC CRANES</h1><span>เครนพับรถบรรทุก</span>
+        <div class="massage">
+        <p>MAC CRANES เป็นผู้นำเข้าและจำหน่ายเครนพับรถบรรทุกมือสอง (Knuckles Boom Cranes) จากยุโรปโดยตรง </p>
+        <p>MAC CRANES ผลิต ปอกบูมแบบ Manual และ Hydraulic , ที่นั่งควบคุมบน (Top Seat) และพร้อมประกอบติดตั้งบนรถบรรทุก</p>
+        <p>MAC CRANES ให้บริการ ซ่อม , ติดตั้งเครนพับรถบรรทุกทุกประเภท </p>
+        <p>ให้คำแนะนำฟรีสำหรับผู้สนใจที่จะเลือกใช้ และ ซื้อรถบรรทุก ที่เหมาะสมตามใช้งานกับเครน รวมถึงบริการหลังการขาย จัดหาอะไหล่,งานซ่อมบำรุง และปัญหาเทคนิคต่างๆ </p>
+        </div>
+    </div>
+   </div>
+</div>
+<div class="wrap-two">
+    <div class="left-two">
+     <p>MAC CRANES นำเข้าเครนจากต่างประเทศโดยตรง </p>
+     <div class="crane-top">
+     </div>
+    </div>
+    <div class="right-two">
+        <img src="{% static 'images/crane3.jpg' %}" alt="โลโก้เครน" class="crane1-img">
+        <img src="{% static 'images/crane1.jpg' %}" alt="โลโก้เครน" class="crane2-img">
+    </div>
+</div> 
+<div class="wrap-three">
+    <div class="left-three">
+        <img src="{% static 'images/crane4.jpg' %}" alt="โลโก้เครน" class="crane3-img">
+        <img src="{% static 'images/crane5.jpg' %}" alt="โลโก้เครน" class="crane3-img">
+        <img src="{% static 'images/crane8.jpg' %}" alt="โลโก้เครน" class="crane4-img">
+        <img src="{% static 'images/crane9.jpg' %}" alt="โลโก้เครน" class="crane4-img">
+    </div>
+    <div class="right-three">
+        <p> MAC CRANES ได้สร้างแท่นทดสอบ (POWERPACK) เพื่อทดสอบการใช้งาน โครงสร้างพื้นฐานเครน ว่าสามารถใช้งานได้ปกติ</p>
+    </div>
+</div>
+<div class="wrap-four">
+    <div class="left-four">
+        <p> MAC CRANES จัดการโหลดเครนและแพ็ค อุปกรณ์ชิ้นส่วนต่างๆ บนพื้นฐานความความปลอดภัย ในระหว่างการขนส่ง และสะดวกต่อการยกลงที่ปลายทาง</p>
+    </div>
+    <div class="right-four">
+        <img src="{% static 'images/crane10.jpg' %}" alt="โลโก้เครน" class="crane5-img">
+        <img src="{% static 'images/crane11.jpg' %}" alt="โลโก้เครน" class="crane6-img">
+    </div>
+</div>
+<div class="wrap-five">
+    <div class="left-five">
+        <img src="{% static 'images/crane12.jpg' %}" alt="โลโก้เครน" class="crane7-img">
+        <img src="{% static 'images/crane13.jpg' %}" alt="โลโก้เครน" class="crane7-img">
+        <img src="{% static 'images/crane14.jpg' %}" alt="โลโก้เครน" class="crane8-img">
+        <img src="{% static 'images/crane15.jpg' %}" alt="โลโก้เครน" class="crane8-img">
+    </div>
+    <div class="right-five">
+        <p>MAC CRANES ให้บริการติดตั้งเครนบนรถบรรทุกของลูกค้า ตั้งแต่การจัดเตรียม วางแผน ชิ้นส่วน และ อุปกรณ์ ที่เหมาะสมต่อการใช้งานที่แตกต่างกันของลูกค้าและบริการเสริมอื่นๆ เช่นการเพิ่มปอกบูม ทั้งระบบ Manual และไฮดรอลิค การทำที่นั่งควบคุมบน การเดินท่อไปปลายเครนเพื่อต่อพ่วงอุปกรณ์</p>
+    </div>
+</div>
+   </section>
+    <div class="endweb" style=" overflow: hidden; width: 100%; height: 420px; background:black;">
+        <div class="contactend">
+        <img src="{% static 'images/logomaccrane1.png' %}" alt="โลโก้เครน" class="logocrane2-img">
+        <h3 class="contact-ttend">บริษัท แม็ค โปรเมททอล จำกัด</h3>
+        <ul class="contact-listend">
+            <li>
+              <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x311d81059e8b0267:0xc7e8169525d50858?entry=s&sa=X&ved=2ahUKEwjBmL3X98mQAxUlavUHHRpOATgQ4kB6BAgXEAA" target="_blank" rel="noopener">10/28 ม.13 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12120</a>
+            </li>
+            <li>
+            <div class="facebook-end">
+              <a class="fb-end" href="https://www.facebook.com/Maccranes" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
+               <!-- Facebook SVG -->
+                <svg class="logofb" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.2-3.4.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.62-1.3 1.26V12h2.2l-.35 2.9h-1.85v7A10 10 0 0 0 22 12z"/>
+                </svg> <span>Facebook</span></a>
+              </li>
+
+            <li class="gt">
+             <span>Email:</span><a href="mailto:mac.cranetrucks@gmail.com"> mac.cranetrucks@gmail.com</a>
+            </li>
+            <li class="gt">
+             <span>Tel/Line/WhatsApp:</span> <a href="tel:0827963619">082-796-3619</a>
+            </li>
+            <li class="oe">เปิด 8:00น.–17:00น. จันทร์-ศุกร์</li>
+        </div>
+    </div>
+
+   <div style="height: auto; background: linear-gradient(#fff,#f9f9f9);"> 
+   </div>
+
+{% endblock %}  

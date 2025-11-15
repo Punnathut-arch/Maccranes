@@ -1,0 +1,69 @@
+.spec-panel{ max-height:0; overflow:hidden; transition: all .3s ease; }
+.spec-panel.open{ max-height:1200px; }
+.b-spec {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffd200;
+    border-top-right-radius:20px ; 
+    border: none;
+    border-bottom-right-radius:20px ; 
+    font-size: 35px; font-family: "Kanit", sans-serif; font-weight: 800; font-style: italic;
+    color: black;
+    text-decoration: none;
+    margin-top: 25px; padding: 15px;
+    position: relative;
+}
+.b-spec:hover {border: 3px solid rgba(0,0,0,.08); background-color: #f7d551;}
+.b-spec .subspec-caret {
+  margin-left: 15px;
+  font-size: 25px;
+  transition: transform 0.2s ease;
+}
+.subspec-caret {
+  content: "";
+  width: 10px; height: 10px;
+  border-right: 2px solid rgba(0,0,0,.7);
+  border-bottom: 2px solid rgba(0,0,0,.7);
+  transform: rotate(45deg);
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.subspec-caret.open { transform: rotate(225deg);}
+.spec-group {width: 55%; margin: 10px;}
+.top-group {width: 55%; margin: 10px;}
+.topic-spec {font-size: 25px; font-family: "Kanit", sans-serif; font-weight: 800; font-style: italic;}
+.opt {font-size: 20px; font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal;}
+.sub-topic {font-weight: 700;}
+.message {
+  font-size: 18px; font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal;
+  margin: 5px;
+}
+.spec-selected { margin-left: 10px; font-size: 25px; font-family: "Kanit", sans-serif; font-weight: 800; font-style: normal;}
+.chip {font-size: 20px;}
+
+.spec-actions {margin-left:10px ; margin-top: 5px;}
+.btn-ok { 
+  font-size: 20px; font-family: "Kanit", sans-serif; font-weight: 500; font-style: normal;
+  padding: 1px 8px;
+  cursor: pointer;
+}
+.btn-clear {
+  font-size: 20px; font-family: "Kanit", sans-serif; font-weight: 500; font-style: normal;
+  padding: 1px 8px;
+  cursor: pointer;
+}
+.topic-results {margin-left: 10px; font-size: 30px; font-family: "Kanit", sans-serif; font-weight: 800; font-style: normal;}
+.product-grid > .muted {
+  font-family: "Kanit", sans-serif; font-style: italic; font-weight: 700; font-size: 25px;
+  color: #999;
+  padding-top: 15px; padding-bottom: 15px;
+  margin: 30px;
+  height: 100%;
+}
+.muted {text-align: center;}
+@media(max-width:960px) {
+  .spec-group { display:block; width: 60%;}
+  .opt {display: flex;}
+  .top-group {width: 90%;}
+  .b-spec { font-size: 26px;}
+}
