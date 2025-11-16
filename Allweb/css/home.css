@@ -247,13 +247,13 @@ position: absolute;
   position: absolute;
   display: flex;
   flex-direction: column;
-  margin-top: 45%;
+  margin-top: 38%;
   margin-left: 20%;
-  margin-right: 30%;
+  margin-right: 20%;
   width: 100%;
 }
-.crane5-img { height:70%; width: 50%;}
-.crane6-img { height:70%; width: 50%;}
+.crane5-img { height:70%; width: 50%; margin-left: -40%;}
+.crane6-img { height:70%; width: 50%; margin-left: -40%;}
 .wrap-five { display:grid; text-align: center;  height: 600px; max-height: 40%; margin: auto; position: relative;}
 .left-five { 
   margin-top: 5%;
